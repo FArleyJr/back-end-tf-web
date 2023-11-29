@@ -1,8 +1,7 @@
 //index.js
 import dotenv from "dotenv";
 import express from "express";
-import { selectUsuarios } from "./bd.js";
-
+import { selectUsuarios, selectUsuario } from "bd.js";
 dotenv.config();
 
 const app = express(); // Instancia o Express
@@ -16,6 +15,18 @@ app.get("/", (req, res) => {
   });
 });
 
+
+
+app.post("/usuario", async (req, res) => {
+  console.log("Rota POST /usuario solicitada");
+  try {
+    await insertUsuario(req.body);
+    res.status(201).json({ message: "Usuário inserido com sucesso!" });
+  } catch (error) {
+    res.status(error.status || 500).json({ message: error.message || "Erro!" });
+  }
+});
+
 app.get("/usuarios", async (req, res) => {
   try {
     const usuarios = await selectUsuarios();
@@ -26,6 +37,7 @@ app.get("/usuarios", async (req, res) => {
 
   console.log("Rota GET/usuarios solicitada");
 });
+
 
 app.listen(port, () => {
   // Um socket para "escutar" as requisições
