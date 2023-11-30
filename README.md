@@ -1,6 +1,14 @@
 # back-end-tf-web
 Back-End do trabalho final da disciplina de WEB
 
+Grupo
+Farley
+Davi
+Eliarito
+Vinicius
+Hugo
+Luiz Eduardo
+
 
 Usuário
 Altera dados de um determinado usuário
