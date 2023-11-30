@@ -2,7 +2,7 @@
 import dotenv from "dotenv";
 import express from "express";
 //index.js
-import { selectUsuarios, selectUsuario, insertUsuario, deleteUsuario, updateUsuario } from "./bd.js";
+import { insertCliente, selectCliente, selectUsuarios, selectUsuario, insertUsuario, deleteUsuario, updateUsuario } from "./bd.js";
 dotenv.config();
 
 
@@ -18,6 +18,26 @@ app.get("/", (req, res) => {
   });
 });
 
+app.post("/evento", async (req, res) => {
+  console.log("Rota POST /cliente solicitada");
+  try {
+    await insertCliente(req.body);
+    res.status(201).json({ message: "Usuário inserido com sucesso!" });
+  } catch (error) {
+    res.status(error.status || 500).json({ message: error.message || "Erro!" });
+  }
+});
+
+
+app.get("/eventos", async (req, res) => {
+  console.log("Rota GET/usuarios solicitada");
+  try {
+    const usuarios = await selectCliente();
+    res.json(eventos);
+  } catch (error) {
+    res.status(error.status || 500).json({ message: error.message || "Erro!" });
+  }
+});
 
 
 app.post("/usuario", async (req, res) => {
