@@ -71,7 +71,7 @@ Tipo da requisição: Get
 Body:
 
 Link do modelo Conceitual
-(/workspaces/back-end-tf-web/db/modeloConceitual0.jpg)
+(https://drive.google.com/file/d/1o2fjNWw0IX5PZfzhzK052qOvHRqREp3b/view?usp=drive_link)
 
 Link do modelo Lógico
 ()
