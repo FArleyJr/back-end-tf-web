@@ -74,6 +74,7 @@ Link do modelo Conceitual
 (https://drive.google.com/file/d/1o2fjNWw0IX5PZfzhzK052qOvHRqREp3b/view?usp=drive_link)
 
 Link do modelo Lógico
-()
+(https://drive.google.com/file/d/1NQIPgT9jiGcAMV53UJ2iG11eZcIYYyhs/view?usp=drive_link)
 
 Link do modelo Físico
+(/workspaces/back-end-tf-web/db/DDL.sql)
