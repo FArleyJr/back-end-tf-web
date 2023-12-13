@@ -1,7 +1,7 @@
 /* Lógico_1: */
 
 CREAT TABLE Evento (
-id INTEGER PRIMARY KEY, 
+id serial PRIMARY KEY,
 data DATE, 
 nome VARCHAR, 
 preco FLOAT, 
@@ -12,7 +12,7 @@ CREAT TABLE Usuario (
 nome VARCHAR,
 senha VARCHAR, 
 email VARCHAR, 
-id INTEGER PRIMARY KEY, 
+id serial PRIMARY KEY,
 fk_Evento_id INTEGER,
 fk_Evento_id_INTEGER, 
 fk_Evento_id INTEGER );
