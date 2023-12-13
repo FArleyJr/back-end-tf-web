@@ -71,10 +71,10 @@ Tipo da requisição: Get
 Body:
 
 Link do modelo Conceitual
-(https://drive.google.com/file/d/1o2fjNWw0IX5PZfzhzK052qOvHRqREp3b/view?usp=drive_link)
+(![Modelo Conceitual](db/modeloConceitual0.jpg))
 
 Link do modelo Lógico
-(https://drive.google.com/file/d/1NQIPgT9jiGcAMV53UJ2iG11eZcIYYyhs/view?usp=drive_link)
+(![Modelo Lógico](<db/modeloLógico (1).jpg>))
 
 Link do modelo Físico
-(/workspaces/back-end-tf-web/db/DDL.sql)
+([Modelo Físico](db/DDL.sql))
