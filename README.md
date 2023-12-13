@@ -78,3 +78,5 @@ Link do modelo Lógico
 
 Link do modelo Físico
 ([Modelo Físico](db/DDL.sql))
+
+FERRAMENTAS USADAS: BrMODELO E NEON TECH
