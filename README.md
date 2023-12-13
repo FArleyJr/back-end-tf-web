@@ -71,7 +71,7 @@ Tipo da requisição: Get
 Body:
 
 Link do modelo Conceitual
-(C:/Users/farle/OneDrive/Área%20de%20Trabalho/modeloConceitual0.jpg)
+(/workspaces/back-end-tf-web/db/modeloConceitual0.jpg)
 
 Link do modelo Lógico
 ()
