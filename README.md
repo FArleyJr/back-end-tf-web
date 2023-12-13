@@ -57,11 +57,23 @@ Endpoint:https://glowing-eureka-ggpxpv45464c5vp-3000.app.github.dev/evento/1
 Tipo da requisição: Post
 Body: 
 {
-  "cliente": "Nome do usuário",
+  "id":"11",
+  "nome":"cabaré Hoje",
+  "preco":"50",
+  "data":"11/1/2024",
+  "decricao":"Seja  mminha farofa para passar a linguica",
+  "fk_usuario_id":"1"
 }
-
 Evento
 Consultar/pegar o cliente que está cadastrado no evento
 Endpoint: https://glowing-eureka-ggpxpv45464c5vp-3000.app.github.dev/evento
 Tipo da requisição: Get
 Body:
+
+Link do modelo Conceitual
+(C:/Users/farle/OneDrive/Área%20de%20Trabalho/modeloConceitual0.jpg)
+
+Link do modelo Lógico
+()
+
+Link do modelo Físico

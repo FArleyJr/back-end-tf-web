@@ -10,6 +10,23 @@ async function connect() {
 }
 
 
+
+
+async function selectEvento() {
+  const client = await connect();
+  const res = await client.query("SELECT * FROM evento");
+  return res.rows;
+}
+
+
+async function insertEvento(data) {
+  const client = await connect();
+  const query = "INSERT INTO evento (nome, preco, data, decricao) VALUES ($1,$2,$3,$4) ";
+  const evento = [data.nome, data.preco, data.data, data.decricao];
+  await client.query(query, evento);
+}
+
+
 //bd.js
 async function selectUsuario(id) {
   const client = await connect();
@@ -25,26 +42,11 @@ async function selectUsuarios() {
   return res.rows;
 }
 
-//bd.js
-
-async function selectCliente() {
-  const client = await connect();
-  const res = await client.query("SELECT * FROM evento");
-  return res.rows;
-}
-
 async function insertUsuario(data) {
   const client = await connect();
   const query = "INSERT INTO usuario (nome,senha,email) VALUES ($1,$2,$3) ";
   const usuario = [data.nome, data.senha, data.email];
   await client.query(query, usuario);
-}
-
-async function insertCliente(dataa) {
-  const client = await connect();
-  const query = "INSERT INTO evento (cliente) VALUES ($1) ";
-  const evento = [dataa.cliente];
-  await client.query(query, evento);
 }
 
 async function deleteUsuario(id) {
@@ -62,4 +64,4 @@ async function updateUsuario(data) {
 }
 
 //bd.js
-export { selectUsuarios, selectUsuario, insertUsuario, deleteUsuario, updateUsuario,selectCliente, insertCliente };
+export { selectUsuarios, selectUsuario, insertUsuario, deleteUsuario, updateUsuario, selectEvento, insertEvento };

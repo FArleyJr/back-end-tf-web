@@ -2,9 +2,8 @@
 import dotenv from "dotenv";
 import express from "express";
 //index.js
-import { insertCliente, selectCliente, selectUsuarios, selectUsuario, insertUsuario, deleteUsuario, updateUsuario } from "./bd.js";
+import {insertEvento, selectEvento,selectUsuarios, selectUsuario, insertUsuario, deleteUsuario, updateUsuario } from "./bd.js";
 dotenv.config();
-
 
 const app = express(); // Instancia o Express
 const port = 3000; // Define a porta
@@ -19,26 +18,50 @@ app.get("/", (req, res) => {
 });
 
 app.post("/evento", async (req, res) => {
-  console.log("Rota POST /cliente solicitada");
+  console.log("Rota POST /evento solicitada");
   try {
-    await insertCliente(req.body);
+    await insertEvento(req.body);
+    res.status(201).json({ message: "Evento inserido com sucesso!" });
+  } catch (error) {
+    res.status(error.status || 500).json({ message: error.message || "Erro!" });
+  }
+});
+/*
+app.post("/usuario", async (req, res) => {
+  console.log("Rota POST /usuario solicitada");
+  try {
+    await insertUsuario(req.body);
     res.status(201).json({ message: "Usuário inserido com sucesso!" });
   } catch (error) {
     res.status(error.status || 500).json({ message: error.message || "Erro!" });
   }
 });
+*/
 
 
 app.get("/eventos", async (req, res) => {
-  console.log("Rota GET/usuarios solicitada");
   try {
-    const usuarios = await selectCliente();
+    const eventos = await selectEvento();
     res.json(eventos);
   } catch (error) {
     res.status(error.status || 500).json({ message: error.message || "Erro!" });
   }
+  console.log("Rota GET/evento solicitada");
 });
 
+/*
+
+app.get("/usuarios", async (req, res) => {
+  try {
+    const usuarios = await selectUsuarios();
+    res.json(usuarios);
+  } catch (error) {
+    res.status(error.status || 500).json({ message: error.message || "Erro!" });
+  }
+  console.log("Rota GET/usuarios solicitada");
+});
+
+*/
 
 app.post("/usuario", async (req, res) => {
   console.log("Rota POST /usuario solicitada");
@@ -69,7 +92,6 @@ app.get("/usuarios", async (req, res) => {
   } catch (error) {
     res.status(error.status || 500).json({ message: error.message || "Erro!" });
   }
-
   console.log("Rota GET/usuarios solicitada");
 });
 
