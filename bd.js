@@ -9,20 +9,37 @@ async function connect() {
   return pool.connect();
 }
 
-
-
-
-async function selectEvento() {
+async function selectEventos() {
   const client = await connect();
   const res = await client.query("SELECT * FROM evento");
   return res.rows;
 }
 
+async function selectEvento(id) {
+  const client = await connect();
+  const query = "SELECT * FROM evento WHERE id = $1";
+  const evento = [id];
+  const res = await client.query(query, evento);
+  return res.rows;
+}
+
+
+async function deleteEvento(id) {
+  const client = await connect();
+  const query = "DELETE FROM evento WHERE id = $1";
+  await client.query(query, [id]);
+}
+
+async function deleteUsuario(id) {
+  const client = await connect();
+  const query = "DELETE FROM usuario WHERE id = $1";
+  await client.query(query, [id]);
+}
 
 async function insertEvento(data) {
   const client = await connect();
-  const query = "INSERT INTO evento (nome, preco, data, decricao) VALUES ($1,$2,$3,$4) ";
-  const evento = [data.nome, data.preco, data.data, data.decricao];
+  const query = "INSERT INTO Evento (nome, preco, data, descricao, local) VALUES ($1,$2,$3,$4,$5) ";
+  const evento = [data.nome, data.preco, data.data, data.descricao, data.local];
   await client.query(query, evento);
 }
 
@@ -49,19 +66,13 @@ async function insertUsuario(data) {
   await client.query(query, usuario);
 }
 
-async function deleteUsuario(id) {
-  const client = await connect();
-  const query = "DELETE FROM usuario WHERE id = $1";
-  await client.query(query, [id]);
-}
 
 async function updateUsuario(data) {
   const client = await connect();
-  const query =
-    "UPDATE usuario SET nome = $1, email = $2, senha = $3 WHERE id = $4";
+  const query = "UPDATE usuario SET nome = $1, email = $2, senha = $3 WHERE id = $4";
   const usuario = [data.nome, data.email, data.senha, data.id];
   await client.query(query, usuario);
 }
 
 //bd.js
-export { selectUsuarios, selectUsuario, insertUsuario, deleteUsuario, updateUsuario, selectEvento, insertEvento };
+export { selectUsuarios, selectUsuario, insertUsuario, deleteUsuario, updateUsuario, selectEvento, selectEventos, deleteEvento, insertEvento };

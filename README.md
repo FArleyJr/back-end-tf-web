@@ -12,37 +12,31 @@ Luiz Eduardo
 
 Usuário
 Altera dados de um determinado usuário
-Endpoint:https://glowing-eureka-ggpxpv45464c5vp-3000.app.github.dev/usuario/
+Endpoint:https://sturdy-space-capybara-6jpvpx9rr7434qg-3000.app.github.dev/usuario
 Tipo da requesição:Put
 Body:
-{
-  "id": 1,
-  "nome": "Nome do usuário",
-  "senha": "***",
-  "email": "email_usuario@email.com"
-}
 
 Usuário
 Deleta um determinado usuário do banco de dados
-Endpoint: https://glowing-eureka-ggpxpv45464c5vp-3000.app.github.dev/usuario/s
+Endpoint:https://sturdy-space-capybara-6jpvpx9rr7434qg-3000.app.github.dev/usuario/id
 Tipo da requisição: Delete 
 Body: 
 
 Usuário
-Envia dados de um usuário pra um determinado servidor 
-Endpoint: https://glowing-eureka-ggpxpv45464c5vp-3000.app.github.dev/usuario/1/
-Tipo da requisição: Post 
+Mostra dados de um determinado usuário
+Endpoint: https://sturdy-space-capybara-6jpvpx9rr7434qg-3000.app.github.dev/usuario/id
+Tipo da requisição: get
 Body: 
 
 Usuário
 Obtém/consulta o usuário ou os usuários do banco de dados
-Endpoint: https://glowing-eureka-ggpxpv45464c5vp-3000.app.github.dev/usuarios
+Endpoint: https://sturdy-space-capybara-6jpvpx9rr7434qg-3000.app.github.dev/usuarios
 Tipo da requisição: Get
 Body: 
 
 Usuário
 Insere uma nova linha (um novo usuário) no banco de dados
-Endpoint: https://glowing-eureka-ggpxpv45464c5vp-3000.app.github.dev/usuario/
+Endpoint: https://sturdy-space-capybara-6jpvpx9rr7434qg-3000.app.github.dev/usuario
 Tipo da requisição: post
 Body:
 {
@@ -52,21 +46,27 @@ Body:
 }
 
 Evento
-Colocar um cliente novo e cadastra-lo no evento 
-Endpoint:https://glowing-eureka-ggpxpv45464c5vp-3000.app.github.dev/evento/1
+Colocar um novo evento no site 
+Endpoint:https://sturdy-space-capybara-6jpvpx9rr7434qg-3000.app.github.dev/evento
 Tipo da requisição: Post
 Body: 
 {
-  "id":"11",
-  "nome":"cabaré Hoje",
+  "nome":" ",
   "preco":"50",
   "data":"11/1/2024",
-  "decricao":"Seja  mminha farofa para passar a linguica",
-  "fk_usuario_id":"1"
+  "local":"Rua 0",
+  "decricao":"Descrição"
 }
+
 Evento
-Consultar/pegar o cliente que está cadastrado no evento
-Endpoint: https://glowing-eureka-ggpxpv45464c5vp-3000.app.github.dev/evento
+Consultar/pegar um evento cadastrado
+Endpoint:https://sturdy-space-capybara-6jpvpx9rr7434qg-3000.app.github.dev/evento/id
+Tipo da requisição: delete
+Body:
+
+Evento
+Mostrar eventos que já estão caadstrados
+Endpoint: https://sturdy-space-capybara-6jpvpx9rr7434qg-3000.app.github.dev/eventos
 Tipo da requisição: Get
 Body:
 
