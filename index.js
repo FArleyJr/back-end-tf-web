@@ -10,6 +10,16 @@ const app = express(); // Instancia o Express
 const port = 3000; // Define a porta
 app.use(express.json());
 
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://curly-space-tribble-px6765jgwp9c9695-5500.app.github.dev');
+  next();
+});
+
+
+app.listen(3000, () => {
+  console.log('Servidor iniciado na porta 3000');
+});
+
 app.get("/", (req, res) => {
   console.log("Rota / solicitada");
   // Cria a rota da raiz do projeto
